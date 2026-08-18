@@ -15,6 +15,7 @@ export {
 	fetchModelsDevProviderModels,
 	filterOpenAICodexModels,
 	getAllProviders,
+	getBuiltInProviderCollectionSync,
 	getGeneratedModelsForProvider,
 	getGeneratedProviderModels,
 	getModelsForProvider,
@@ -94,6 +95,7 @@ export {
 	registerHandler,
 	resolveProviderApiLineBaseUrl,
 } from "./providers";
+export * from "./providers/aimlapi";
 export {
 	type ProviderUsageCostDisplay,
 	resolveProviderUsageCostDisplay,

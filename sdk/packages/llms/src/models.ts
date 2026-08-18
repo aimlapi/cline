@@ -23,6 +23,7 @@ export type {
 } from "./catalog/types";
 export {
 	getAllProviders,
+	getBuiltInProviderCollectionSync,
 	getModelsForProvider,
 	getProvider,
 	getProviderCollection,
