@@ -11,6 +11,7 @@ export {
 	CODEX_EFFECTIVE_CONTEXT_WINDOW_PERCENT,
 	filterOpenAICodexModels,
 	getAllProviders,
+	getBuiltInProviderCollectionSync,
 	getGeneratedModelsForProvider,
 	getModelsForProvider,
 	getProvider,
@@ -27,6 +28,7 @@ export {
 	unregisterProvider,
 	VERCEL_OPENROUTER_MODEL_ID_ALIAS_RULES,
 } from "./models";
+export * from "./providers/aimlapi";
 export {
 	type ProviderUsageCostDisplay,
 	resolveProviderUsageCostDisplay,

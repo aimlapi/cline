@@ -30,6 +30,11 @@ import type {
 	ProviderFamily,
 } from "./builtin-types";
 import {
+	AIMLAPI_DEFAULT_INTEGRATION_REPO,
+	AIMLAPI_DEFAULT_INTEGRATION_VERSION,
+	AIMLAPI_DEFAULT_PARTNER_ID,
+} from "./aimlapi/config";
+import {
 	ClineFreeModelLimitError,
 	ClineNotSubscribedError,
 	ClineOrgIndividualInferenceSubscriptionError,
@@ -882,6 +887,26 @@ const OPENAI_COMPATIBLE_SPEC_OVERRIDES: BuiltinSpecOverride[] = [
 		defaultModelId: "hicap-pro",
 		apiKeyEnv: ["HICAP_API_KEY"],
 		defaults: { baseUrl: "https://api.hicap.ai/v1" },
+	},
+	{
+		id: "aimlapi",
+		name: "aimlapi.com",
+		description: "AI model gateway with an OpenAI-compatible API",
+		family: "openai-compatible",
+		popular: 3,
+		capabilities: ["reasoning", "tools"],
+		defaultModelId: "anthropic/claude-sonnet-5",
+		apiKeyEnv: ["AIMLAPI_API_KEY"],
+		defaults: {
+			baseUrl: "https://api.aimlapi.com/v1",
+			headers: {
+				"X-AIMLAPI-Partner-ID": AIMLAPI_DEFAULT_PARTNER_ID,
+				"X-AIMLAPI-Integration-Repo": AIMLAPI_DEFAULT_INTEGRATION_REPO,
+				"X-AIMLAPI-Integration-Version": AIMLAPI_DEFAULT_INTEGRATION_VERSION,
+			},
+		},
+		modelsSourceUrl:
+			"https://api.aimlapi.com/v1/models?type=openai%2Fchat-completions",
 	},
 	{
 		id: "nousResearch",

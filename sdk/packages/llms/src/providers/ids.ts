@@ -66,6 +66,7 @@ export enum BUILT_IN_PROVIDER {
 	OCA = "oca",
 	SAPAICORE = "sapaicore",
 	// Aggregators
+	AIMLAPI = "aimlapi",
 	OPENROUTER = "openrouter",
 }
 
